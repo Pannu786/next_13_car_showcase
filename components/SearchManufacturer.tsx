@@ -13,7 +13,7 @@ const SearchManufacturer = ({
 }: SearchManufacturerProps) => {
   const [query, setQuery] = useState('');
 
-  const filteredManufacturer =
+  const filteredManufacturers =
     query === ''
       ? manufacturers
       : manufacturers.filter((item) =>
@@ -50,7 +50,16 @@ const SearchManufacturer = ({
             leaveTo='opacity-0'
             afterLeave={() => setQuery('')}
           >
-            <Combobox.Options></Combobox.Options>
+            <Combobox.Options>
+              {filteredManufacturers.length === 0 && query !== '' && (
+                <Combobox.Option
+                  value={query}
+                  className='search-manufacturer__option'
+                >
+                  Create "{query}"
+                </Combobox.Option>
+              )}
+            </Combobox.Options>
           </Transition>
         </div>
       </Combobox>
