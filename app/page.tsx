@@ -6,6 +6,8 @@ import { fetchCars } from '@/utils';
 export default async function Home() {
   const allCars = await fetchCars();
 
+  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
+
   console.log(allCars);
 
   return (
@@ -25,6 +27,15 @@ export default async function Home() {
             <CustomFilter title='year' />
           </div>
         </div>
+
+        {!isDataEmpty ? (
+          <section>We have cars</section>
+        ) : (
+          <div className='home__error-container'>
+            <h2 className='text-black text-xl font-bold'>Oops, no results</h2>
+            <p>{allCars?.message}</p>
+          </div>
+        )}
       </div>
     </main>
   );
