@@ -19,7 +19,7 @@ const CarCard = ({ car }: CarCardProps) => {
         </h2>
       </div>
       <p>
-        <span></span>
+        <span>Car Rent...</span>
       </p>
     </div>
   );
