@@ -21,8 +21,8 @@ const CarCard = ({ car }: CarCardProps) => {
           {make} {model}
         </h2>
       </div>
-      <p>
-        <span>Car Rent...</span>
+      <p className='flex mt-6 text-[32px] font-extrabold'>
+        <span>{carRent}</span>
       </p>
     </div>
   );
