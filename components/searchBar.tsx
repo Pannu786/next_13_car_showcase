@@ -25,6 +25,9 @@ const SearchBar = () => {
     e.preventDefault();
   };
 
+  const updateSearchParams = (model: string, manufacturer: string) => {
+    const searchParams = new URLSearchParams(window.location.search);
+  };
   return (
     <form className='searchbar' onSubmit={handleSearch}>
       <div className='searchbar__item'>
