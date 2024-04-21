@@ -5,12 +5,11 @@ import { fetchCars } from '@/utils';
 
 export default async function Home({ searchParams }) {
   const allCars = await fetchCars({
-    manufacturers: searchParams.manufacturer || '',
+    manufacturer: searchParams.manufacturer || '',
     year: searchParams.year || '',
-    fule: searchParams.fule || '',
-    limit: searchParams: limit || '',
+    fuel: searchParams.fuel || '',
+    limit: searchParams.limit || '',
     model: searchParams.model || '',
-
   });
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
