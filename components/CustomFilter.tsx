@@ -1,9 +1,9 @@
-import React from 'react'
+'use client';
+
+import { Fragment, useState } from 'react';
 
 const CustomFilter = () => {
-  return (
-    <div>CustomFilter</div>
-  )
-}
+  return <div>CustomFilter</div>;
+};
 
-export default CustomFilter
+export default CustomFilter;
