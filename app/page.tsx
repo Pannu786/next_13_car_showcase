@@ -9,7 +9,7 @@ export default async function Home({ searchParams }) {
     manufacturer: searchParams.manufacturer || '',
     year: searchParams.year || '',
     fuel: searchParams.fuel || '',
-    limit: searchParams.limit || '6',
+    limit: searchParams.limit || '10',
     model: searchParams.model || '',
   });
 
@@ -40,8 +40,9 @@ export default async function Home({ searchParams }) {
                 <CarCard car={car} />
               ))}
             </div>
+            
             <ShowMore
-              pageNumber={(searchParams.pageNumber || 10) / 10}
+              pageNumber={(searchParams.limit || 10) / 10}
               isNext={(searchParams.limit || 10) > allCars.length}
             />
           </section>
